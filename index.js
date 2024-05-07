@@ -46,3 +46,8 @@ app.post('/generate-token', (req, res) => {
     const token = jwt.sign({ id: 'user_id' }, SECRET_KEY, { expiresIn: 86400 }); // 24 hour expiration
     res.status(200).send({ auth: true, token: token });
   });
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
